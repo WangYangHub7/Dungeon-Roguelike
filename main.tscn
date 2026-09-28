@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://db3x6hhv5s5yi"]
+
+[ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://addons/virtual_joystick_cf/virtual_joystick_cf.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Player" parent="World" instance=ExtResource("1_ig7tw")]
+position = Vector2(582, 330)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+
+[node name="VirtualJoystickCF" parent="UI/CanvasLayer" instance=ExtResource("2_0xm2m")]
+offset_left = 205.0
+offset_top = 450.0
+offset_right = 205.0
+offset_bottom = 450.0
+action_left = &"left"
+action_up = &"up"
+action_right = &"right"
+action_down = &"down"
